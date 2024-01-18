@@ -1,0 +1,21 @@
+---
+- hosts: all
+  strategy: free
+  remote_user: roothp
+  become: yes
+  become_method: sudo
+  gather_facts: no
+
+  tasks:
+  - name: set splunk version
+    shell: grep -roi 9.0.0 /opt/splunkforwarder/etc/splunk.version
+    register: version
+
+  - name: show version
+    debug:
+      msg: "{{ version }}"
+
+  - name: Check Version
+    debug:
+      msg: "Older version installed"
+    when: version.stdout != "9.0.0"
