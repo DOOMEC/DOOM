@@ -1,6 +1,6 @@
 # This playbook executes /tmp/leoshscript.sh on multiple hosts for different webinstances 
 # In the below example you can asign webserver for specific hosts under "content: |" 
-# In this case we have 2 hosts ivwb2874 and ivwb2990
+# In this case we have 2 hosts EXAMPLE1 and EXAMPLE2
 # Add your email adress on line "53" .You will recive and email contating log output from each server.
 # Always test frist on a single server or two.
 #
